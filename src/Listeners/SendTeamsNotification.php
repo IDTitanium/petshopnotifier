@@ -4,6 +4,8 @@ namespace IDTitanium\PetShopNotifier\Listeners;
 
 use IDTitanium\PetShopNotifier\Events\OrderStatusUpdated;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
+use Throwable;
 
 class SendTeamsNotification
 {
@@ -21,10 +23,14 @@ class SendTeamsNotification
     }
 
     private function sendNotification() {
-        $url = config('petshopnotifier.ms_teams_webhook_url');
-        $jsonData = $this->constructCardJson();
+        try {
+            $url = config('petshopnotifier.ms_teams_webhook_url');
+            $jsonData = $this->constructCardJson();
 
-        Http::post($url, $jsonData);
+            Http::post($url, $jsonData);
+        } catch (Throwable $e) {
+            Log::error("Failed to send notification", [$e->getMessage()]);
+        }
     }
 
     private function constructCardJson() {
