@@ -2,6 +2,7 @@
 
 namespace IDTitanium\PetShopNotifier;
 
+use IDTitanium\PetShopNotifier\Providers\EventServiceProvider;
 use Illuminate\Support\ServiceProvider;
 
 class PetShopNotifierServiceProvider extends ServiceProvider
@@ -13,6 +14,8 @@ class PetShopNotifierServiceProvider extends ServiceProvider
         });
 
         $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'petshopnotifier');
+
+        $this->app->register(EventServiceProvider::class);
     }
 
     public function boot()
