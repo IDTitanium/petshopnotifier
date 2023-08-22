@@ -10,11 +10,15 @@
             "email": "idriseun222@gmail.com"
         }
     ],
-    "require": {},
     "autoload": {
         "psr-4": {
-            "IDTitanium\\PetShopNotifier\\": "src"
+            "IDTitanium\\PetShopNotifier\\": "src",
+            "IDTitanium\\PetShopNotifier\\Tests\\": "tests"
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "require-dev": {
+        "orchestra/testbench": "^8.0",
+        "phpunit/phpunit": "^10.4@dev"
+    }
 }
