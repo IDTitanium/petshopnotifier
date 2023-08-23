@@ -43,6 +43,21 @@ i.e. `docker exec -it containerNameOrId bash`.
 - Important to note: This package requires php 8.2 and has been built for use with Laravel 10.
 
 
+### Configuration
+
+After installation, you need to also publish the config file by running the command.
+
+```
+php artisan vendor:publish --provider="IDTitanium\PetShopNotifier\PetShopNotifierServiceProvider" --tag="config"
+```
+
+This will publish the config file and you can set the configurations for the following.
+
+`ms_teams_webhook_url` => The webhook URL for dropping off the notifications.
+
+`orders_dashboard_base_url` => The dashboard base URL for orders page
+
+
 ### Usage
 
 To use this package is quite straightforward.
