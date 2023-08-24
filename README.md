@@ -20,7 +20,7 @@ Steps
 "repositories": [
         {
             "type": "path",
-            "url": "packages/petshop-notifier"
+            "url": "packages/petshopnotifier"
         }
     ]
 ```
@@ -32,7 +32,7 @@ E.g.
 My docker-compose app lives at `/usr/src/app`
 So I have mapped my docker compose volume like this.
 
-`- ../packages/petshop-notifier:/usr/src/app/packages/petshop-notifier`
+`- ../packages/petshop-notifier:/usr/src/app/packages/petshopnotifier`
 
 This package exists on my `../packages` directory locally (relative to main laravel app).
 
