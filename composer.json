@@ -3,7 +3,6 @@
     "description": "A package for petshop notifications",
     "type": "library",
     "license": "MIT",
-    "version": "1.0",
     "authors": [
         {
             "name": "Idris Lawal",
@@ -22,6 +21,6 @@
         "phpunit/phpunit": "^10.4@dev"
     },
     "require": {
-        "guzzlehttp/guzzle": "7.7.x-dev"
+        "guzzlehttp/guzzle": "^7.2"
     }
 }
