@@ -1,4 +1,6 @@
-<?php 
+<?php
+
+declare(strict_types=1);
 
 namespace IDTitanium\PetShopNotifier;
 
@@ -7,7 +9,7 @@ use Illuminate\Support\ServiceProvider;
 
 class PetShopNotifierServiceProvider extends ServiceProvider
 {
-    public function register()
+    public function register(): void
     {
         $this->app->bind('notifier', function ($app) {
             return new PetShopNotifier();
@@ -18,14 +20,12 @@ class PetShopNotifierServiceProvider extends ServiceProvider
         $this->app->register(EventServiceProvider::class);
     }
 
-    public function boot()
+    public function boot(): void
     {
         if ($this->app->runningInConsole()) {
-
             $this->publishes([
-              __DIR__.'/../config/config.php' => config_path('petshopnotifier.php'),
+                __DIR__.'/../config/config.php' => config_path('petshopnotifier.php'),
             ], 'config');
-        
-          }
+        }
     }
 }
